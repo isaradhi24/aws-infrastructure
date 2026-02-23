@@ -5,6 +5,6 @@ module "networking" {
   cidr_public_subnet   = var.cidr_public_subnet
   us_availability_zone = var.us_availability_zone
   cidr_private_subnet  = var.cidr_private_subnet
-  caller_identity      = var.account_id
-  region               = var.region
+ # caller_identity      = var.account_id
+ # region               = var.region
 }

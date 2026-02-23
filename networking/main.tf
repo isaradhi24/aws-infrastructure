@@ -6,30 +6,30 @@ variable "cidr_private_subnet" {}
 
 
 #Get AWS Account ID dynamically
-data "aws_caller_identity" "current" {}
+#data "aws_caller_identity" "current" {}
 #Get current aws region
-data "aws_region" "current" {}
+#data "aws_region" "current" {}
 
 
 # Setup VPC
-resource "aws_vpc" "devops_proj_1_vpc_us-east-1" {
+resource "aws_vpc" "devops_proj_1_vpc_us-east-2" {
   cidr_block = var.vpc_cidr 
   tags = {
    Name         = var.vpc_name
-   AccountID    = data.aws_caller_identity.current.account_id
-   Region       = data.aws_region.current.region
+ #  AccountID    = data.aws_caller_identity.current.account_id
+  # Region       = data.aws_region.current.region
    }
 }
 
 #Output the Account ID
-output "aws_account_id" {
-  value = data.aws_caller_identity.current.account_id
-}
+#output "aws_account_id" {
+#  value = data.aws_caller_identity.current.account_id
+#}
 
 #Output the Region Name
-output "aws_region_name" {
-  value = data.aws_region.current.region
-}
+#output "aws_region_name" {
+#  value = data.aws_region.current.region
+#}
 
 
 /* 
